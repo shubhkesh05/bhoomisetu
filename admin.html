@@ -52,7 +52,7 @@
       const messageDiv = document.getElementById('admin-message');
       messageDiv.textContent = '';
       try {
-        const res = await fetch('http://localhost:5000/api/auth/login', {
+  const res = await fetch('https://bhoomisetu-backend.onrender.com/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password })
@@ -77,7 +77,7 @@
       const table = document.getElementById('disputes-table');
       const messageDiv = document.getElementById('admin-message');
       try {
-        const res = await fetch('http://localhost:5000/api/admin/disputes', {
+  const res = await fetch('https://bhoomisetu-backend.onrender.com/api/admin/disputes', {
           headers: { 'Authorization': 'Bearer ' + adminToken }
         });
         const disputes = await res.json();
@@ -118,7 +118,7 @@
                 const select = document.querySelector(`select.status-select[data-id='${id}']`);
                 const newStatus = select.value;
                 try {
-                  const res = await fetch(`http://localhost:5000/api/admin/disputes/${id}`, {
+                  const res = await fetch(`https://bhoomisetu-backend.onrender.com/api/admin/disputes/${id}`, {
                     method: 'PATCH',
                     headers: {
                       'Content-Type': 'application/json',
