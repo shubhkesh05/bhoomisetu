@@ -6,6 +6,7 @@ import jwt from 'jsonwebtoken';
 const router = express.Router();
 
 // Simple admin middleware (for demo, checks for admin email)
+//Lucky JAIN
 function adminAuth(req, res, next) {
   const token = req.headers['authorization'];
   if (!token) return res.status(401).json({ message: 'No token provided' });
